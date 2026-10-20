@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Srcset Math - responsive image width arithmetic</title>
+<style>
+  :root { --accent:#5f6b24; --ink:#232a0c; --paper:#f9faf0; --soft:#e8edc9; }
+  * { box-sizing:border-box; margin:0; }
+  body { font-family:Georgia, "Times New Roman", serif; background:var(--paper); color:var(--ink); line-height:1.55; }
+  main { max-width:660px; margin:0 auto; }
+  .boundary { background:#fdeaea; border-left:6px solid #b03030; color:#5c1c1c; border-radius:6px; padding:1rem 1.1rem; }
+  .boundary strong { display:block; margin-bottom:.3rem; }
+  body { padding:2.5rem 1.2rem; }
+  h1 { font-size:2.2rem; color:var(--accent); }
+  p.lede { font-size:1.12rem; margin:.9rem 0 1.6rem; }
+  .boundary { margin-bottom:1.6rem; }
+  section { background:var(--soft); border-left:5px solid var(--accent); border-radius:6px; padding:1.1rem 1.2rem; margin-bottom:1.2rem; }
+  h2 { font-size:1.18rem; margin-bottom:.5rem; }
+  section p { font-size:.98rem; }
+  a.btn { display:inline-block; margin-top:1.4rem; background:var(--accent); color:#fff; text-decoration:none; padding:.8rem 1.6rem; border-radius:999px; font-size:1.05rem; }
+  footer { margin-top:2.2rem; font-size:.85rem; color:#7a8444; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Srcset Math</h1>
+  <p class="lede">A 300px wide image slot on a 2x screen needs 600 pixels across, so a 640px wide file is the smallest one in a 320, 480, 640, 960 list that is wide enough.</p>
+  <div class="boundary">
+    <strong>Boundary: arithmetic only</strong>
+    Srcset Math works out responsive image widths from the numbers you type. It has not seen your images or your page. It does not know your image quality, your file sizes or your layout, how a browser will really choose between files, or whether the pictures will look good, and it gives no verdict that a set of files is right. Every number is your own entry.
+  </div>
+  <p class="lede" style="font-size:1rem">Starting examples: a 300px wide slot on a 2x screen, the file widths up to 3x, and the pick from a list of four files.</p>
+  <section>
+    <h2>The need truth</h2>
+    <p>A 300px wide slot on a 2x screen needs 600 pixels across.</p>
+  </section>
+  <section>
+    <h2>The ladder truth</h2>
+    <p>For a 300px wide slot, the files need to be 300, 600 and 900 pixels across for 1x, 2x and 3x screens.</p>
+  </section>
+  <section>
+    <h2>The pick truth</h2>
+    <p>The slot needs 600 pixels across. The smallest listed file that is wide enough is 640px, which is 40 pixels more than needed.</p>
+  </section>
+  <a class="btn" href="app.html">Work out your image widths</a>
+  <footer>Srcset Math is exact arithmetic over the numbers you enter, nothing more.</footer>
+</main>
+</body>
+</html>
